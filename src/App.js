@@ -6,8 +6,15 @@ function App() {
 const [task,checktask]=useState("")
 const [todo , todoupdate ]=useState([ ])
 function click(){
+
+  if(task===""){
+    alert("Add task")
+    return;
+  }
   
   todoupdate(oldtask=>{
+
+    
     
     checktask('')
     return [...oldtask ,{todo:task,id:globalid++}]
@@ -16,6 +23,7 @@ function click(){
 function Deletetheitem(itemID){
   todoupdate(oldtask => oldtask.filter(item => item.id !== itemID))
 }
+
 
 function enterkey(er){
 if (er.keyCode===13){
